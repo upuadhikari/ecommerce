@@ -1,0 +1,13 @@
+#app ul li {
+    padding: 10px;
+}
+
+#app ul li a {
+    color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#app ul li a:hover {
+    text-decoration: none;
+}
