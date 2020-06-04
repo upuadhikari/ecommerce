@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('ecommerce');
 });
 
-Route::get('/slider', function () {
-    return view('slider');
+Route::get('/details', function () {
+    return view('product');
 });
 
 Auth::routes();

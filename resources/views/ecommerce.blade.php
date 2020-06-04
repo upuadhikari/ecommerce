@@ -74,6 +74,7 @@
                 <div class="item carousel-item active">
                     <div class="row">
                         <div class="col-sm-3" >
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/ipad.jfif" class="img-responsive img-fluid" alt="">
@@ -81,42 +82,49 @@
                                 <div class="thumb-content">
                                     <h4>Apple iPad Pro</h4>
                                     <p class="item-price"><strike>Rs 80,000</strike> <span>Rs 76,900</span></p>
+                                     </a>
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/sony.jpg" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content">
                                     <h4>Sony Headphone</h4>
-                                    <p class="item-price"><strike>Rs 2500</strike> <span>Rs 2399</span></p>                            
+                                    <p class="item-price"><strike>Rs 2500</strike> <span>Rs 2399</span></p> 
+                                    </a>                           
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>      
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/m-book.jfif" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content">
                                     <h4>Macbook Air</h4>
-                                    <p class="item-price"><strike>Rs 1,09,900</strike> <span>Rs 1,04,900</span></p>                               
+                                    <p class="item-price"><strike>Rs 1,09,900</strike> <span>Rs 1,04,900</span></p> 
+                                    </a>                              
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>                              
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/nikon.jpg" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content">
                                     <h4>Nikon DSLR</h4>
-                                    <p class="item-price"><strike>Rs 51,500</strike> <span>Rs 45,000</span></p>                               
+                                    <p class="item-price"><strike>Rs 51,500</strike> <span>Rs 45,000</span></p>
+                                    </a>                               
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
@@ -126,30 +134,35 @@
                 <div class="item carousel-item">
                     <div class="row">
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/ps.jpg" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content">
                                     <h4>Sony Play Station</h4>
-                                    <p class="item-price"><strike>Rs 48,900</strike> <span>Rs 46,900</span></p>                               
+                                    <p class="item-price"><strike>Rs 48,900</strike> <span>Rs 46,900</span></p>
+                                    </a>                               
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/m-pro.jpg" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content">
                                     <h4>Macbook Pro</h4>
-                                    <p class="item-price"><strike>Rs 1,59,900</strike> <span>Rs 9,99,00</span></p>                                   
+                                    <p class="item-price"><strike>Rs 1,59,900</strike> <span>Rs 9,99,00</span></p> 
+                                    </a>                                  
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/bose.jpg" class="img-responsive img-fluid" alt="">
@@ -157,18 +170,21 @@
                                 <div class="thumb-content">
                                     <h4>Bose Speaker</h4>
                                     <p class="item-price"><strike>Rs 10,900</strike> <span>Rs 9,900</span></p>
+                                    </a>
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/s9.jpg" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content">
                                     <h4>Samsung Galaxy S9</h4>
-                                    <p class="item-price"><strike>Rs 99,900</strike> <span>Rs 96,900</span></p>                                
+                                    <p class="item-price"><strike>Rs 99,900</strike> <span>Rs 96,900</span></p> 
+                                    </a>                               
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
@@ -184,12 +200,14 @@
                                 </div>
                                 <div class="thumb-content">
                                     <h4>iPhone 10 X</h4>
-                                   <p class="item-price"><strike>Rs 96,900</strike> <span>Rs 94,900</span></p>                                
+                                   <p class="item-price"><strike>Rs 96,900</strike> <span>Rs 94,900</span></p>
+                                   </a>                                
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/canon.png" class="img-responsive img-fluid" alt="">
@@ -197,12 +215,13 @@
                                 <div class="thumb-content">
                                     <h4>Canon DSLR</h4>
                                     <p class="item-price"><strike>Rs 61,500</strike> <span>Rs 55,000</span></p>
-                                    
+                                    </a>
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/pixel.jpg" class="img-responsive img-fluid" alt="">
@@ -210,12 +229,13 @@
                                 <div class="thumb-content">
                                     <h4>Google Pixel</h4>
                                     <p class="item-price"><strike>Rs 65,000</strike> <span>Rs 61,800</span></p>
-                                  
+                                    </a>
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>  
                         <div class="col-sm-3">
+                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="/img/products/watch.jfif" class="img-responsive img-fluid" alt="">
@@ -223,7 +243,7 @@
                                 <div class="thumb-content">
                                     <h4>Apple Watch</h4>
                                     <p class="item-price"><strike>Rs 45,000</strike> <span>Rs 40,000</span></p>
-                                    
+                                     </a>
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
@@ -297,78 +317,6 @@
     </section>
     <!-- Latest Blog Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer-left">
-                        <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: Panga-08, kirtipur</li>
-                            <li>Phone: +977-9860462244</li>
-                            <li>Email: tech.shop@gmail.com</li>
-                        </ul>
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1">
-                    <div class="footer-widget">
-                        <h5>Information</h5>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Services</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="footer-widget">
-                        <h5>My Account</h5>
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Shop</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="newslatter-item">
-                        <h5>Join Our Newsletter Now</h5>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Enter Your Mail">
-                            <button type="button">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-reserved">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-text">
-                          <span>Copyright &copy;2021 All rights reserved |  TechShop</span>
-                        </div>
-                        <div class="payment-pic">
-                            <img src="img/payment-method.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
 
 
 @endsection
