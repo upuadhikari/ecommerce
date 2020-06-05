@@ -30,7 +30,7 @@
 </div>
 
  <div id="our-products" class="slider">
-        <h2 id="tp">Our <b>Products</b></h2>
+        <h2 id="tp" data-aos="fade-right" >Our <b>Products</b></h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0"> 
  </div>
 
@@ -67,7 +67,7 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 id="tp">Trending <b>Products</b></h2>
+            <h2 id="tp" data-aos="fade-left">Trending <b>Products</b></h2>
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0"> 
             <!-- Wrapper for carousel items -->
             <div class="carousel-inner">
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="thumb-content">
                                     <h4>Macbook Pro</h4>
-                                    <p class="item-price"><strike>Rs 1,59,900</strike> <span>Rs 9,99,00</span></p> 
+                                    <p class="item-price"><strike>Rs 1,09,900</strike> <span>Rs 99,900</span></p> 
                                     </a>                                  
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
@@ -267,15 +267,7 @@
 <!---end of product slider--->
 
  <!-- Latest Blog Section Begin -->
-    <section class="latest-blog spad">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>About Us</h2>
-                    </div>
-                </div>
-            </div>
             <div class="benefit-items">
                 <div class="row">
                     <div class="col-lg-4">
@@ -314,7 +306,8 @@
                 </div>
             </div>
         </div>
-    </section>
+        <br>
+        <br>
     <!-- Latest Blog Section End -->
 
 

@@ -120,11 +120,11 @@
                     </div>
                     <div class="col-lg-3 col-md-3" id="col3">  
                              <div class="cart">
-                                 <img src="{{ asset('img/cart.png') }}" id="cart"/>
+                                <a href="/cart"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
                              </div>                                             
                             <ul class="shopnow">
                         <!-- Authentication Links -->
-                                <li><a><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
+                                <li><a href="/shop"><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
                            </ul>
                     </div>
                 </div>
@@ -212,10 +212,12 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-      <script>
-      AOS.inti();
-      </script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript">
+	AOS.init();
+    </script>
       <!-- Bootstrap core JavaScript -->
+  
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> 
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
