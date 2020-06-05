@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/slider', function () {
     return view('slider');
 });
+<<<<<<< HEAD
 
 Auth::routes();
 
@@ -30,5 +31,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+=======
+>>>>>>> aman
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');

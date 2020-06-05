@@ -73,7 +73,10 @@
             <div class="carousel-inner">
                 <div class="item carousel-item active">
                     <div class="row">
+<<<<<<< HEAD
                         <!-- From here card start -->
+=======
+>>>>>>> aman
                         <div class="col-sm-3" >
                             <div class="thumb-wrapper">
                                 <div class="img-box">
@@ -86,7 +89,46 @@
                                 </div>                      
                             </div>
                         </div>
+<<<<<<< HEAD
                         <!-- card end here -->
+=======
+                        <div class="col-sm-3">
+                            <div class="thumb-wrapper">
+                                <div class="img-box">
+                                    <img src="/img/products/sony.jpg" class="img-responsive img-fluid" alt="">
+                                </div>
+                                <div class="thumb-content">
+                                    <h4>Sony Headphone</h4>
+                                    <p class="item-price"><strike>Rs 2500</strike> <span>Rs 2399</span></p>                            
+                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                </div>                      
+                            </div>
+                        </div>      
+                        <div class="col-sm-3">
+                            <div class="thumb-wrapper">
+                                <div class="img-box">
+                                    <img src="/img/products/m-book.jfif" class="img-responsive img-fluid" alt="">
+                                </div>
+                                <div class="thumb-content">
+                                    <h4>Macbook Air</h4>
+                                    <p class="item-price"><strike>Rs 1,09,900</strike> <span>Rs 1,04,900</span></p>                               
+                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                </div>                      
+                            </div>
+                        </div>                              
+                        <div class="col-sm-3">
+                            <div class="thumb-wrapper">
+                                <div class="img-box">
+                                    <img src="/img/products/nikon.jpg" class="img-responsive img-fluid" alt="">
+                                </div>
+                                <div class="thumb-content">
+                                    <h4>Nikon DSLR</h4>
+                                    <p class="item-price"><strike>Rs 51,500</strike> <span>Rs 45,000</span></p>                               
+                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                </div>                      
+                            </div>
+                        </div>
+>>>>>>> aman
                     </div>
                 </div>
                 <div class="item carousel-item">
