@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Todo extends Model
+class Product extends Model
 {
-    public $table="todos";
+    public $table="products";
 }
