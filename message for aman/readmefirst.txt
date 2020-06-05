@@ -1,0 +1,1 @@
+run migration and import this product.sql to product table throungh phpmyadmin
