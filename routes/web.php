@@ -20,15 +20,6 @@ Route::get('/', function () {
 Route::get('/slider', function () {
     return view('slider');
 });
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-
-
-
-
-
