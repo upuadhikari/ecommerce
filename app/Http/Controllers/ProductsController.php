@@ -12,6 +12,11 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function trendinghome()
+    {
+        $items = products::latest()->paginate(15);
+        return view('/ecommerce', ['items' => $items]);  
+    }
     public function index()
     {
         $items = products::latest()->paginate(15);
