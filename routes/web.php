@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('ecommerce');
-});
+Route::get('/','ProductsController@trendinghome');
 
 Route::get('/products/details/{id}', 'ProductsController@show');
 

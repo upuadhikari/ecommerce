@@ -73,62 +73,28 @@
             <div class="carousel-inner">
                 <div class="item carousel-item active">
                     <div class="row">
+
+
+@foreach($items as $item)
+                    <!-- start here -->
                         <div class="col-sm-3" >
                             <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
-                                    <img src="/img/products/ipad.jfif" class="img-responsive img-fluid" alt="">
+                                    <img src="{{$item->picture_url}}" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content">
-                                    <h4>Apple iPad Pro</h4>
-                                    <p class="item-price"><strike>Rs 80,000</strike> <span>Rs 76,900</span></p>
+                                    <h4>{{$item->name}}</h4>
+                                    <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
                                      </a>
                                     <a href="#" class="btn btn-primary">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <a href="/details">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="/img/products/sony.jpg" class="img-responsive img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Sony Headphone</h4>
-                                    <p class="item-price"><strike>Rs 2500</strike> <span>Rs 2399</span></p> 
-                                    </a>                           
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                </div>                      
-                            </div>
-                        </div>      
-                        <div class="col-sm-3">
-                            <a href="/details">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="/img/products/m-book.jfif" class="img-responsive img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Macbook Air</h4>
-                                    <p class="item-price"><strike>Rs 1,09,900</strike> <span>Rs 1,04,900</span></p> 
-                                    </a>                              
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                </div>                      
-                            </div>
-                        </div>                              
-                        <div class="col-sm-3">
-                            <a href="/details">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="/img/products/nikon.jpg" class="img-responsive img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Nikon DSLR</h4>
-                                    <p class="item-price"><strike>Rs 51,500</strike> <span>Rs 45,000</span></p>
-                                    </a>                               
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                </div>                      
-                            </div>
-                        </div>
+                     
+
+                    <!-- card end here -->
+                @endforeach
                     </div>
                 </div>
                 <div class="item carousel-item">
