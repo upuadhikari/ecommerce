@@ -17,18 +17,18 @@ Route::get('/', function () {
     return view('ecommerce');
 });
 
-Route::get('/slider', function () {
-    return view('slider');
+Route::get('/products/details/{id}', 'ProductsController@show');
+
+Route::get('/shop', 'ProductsController@index');
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/checkout', function () {
+    return view('check-out');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-
-
-
-
-
