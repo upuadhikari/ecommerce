@@ -2134,6 +2134,10 @@ h2 {
     margin-bottom: 30px;
 }
 
+.product-shop .product-list img {
+    cursor: pointer;
+}
+
 .product-show-option .select-option {
     display: -webkit-box;
     display: -ms-flexbox;

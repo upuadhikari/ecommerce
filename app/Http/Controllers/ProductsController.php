@@ -14,7 +14,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        $items = products::latest()->paginate(15);
+        return view('/shop', ['items' => $items]);  
     }
 
     /**
@@ -44,9 +45,12 @@ class ProductsController extends Controller
      * @param  \App\products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(products $products)
+    public function show($id)
     {
-        //
+
+        $item = products::where('product_id',$id)->first();;
+        return view('/product', ['product' => $item]);  
+
     }
 
     /**

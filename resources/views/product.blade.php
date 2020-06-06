@@ -59,7 +59,7 @@
                             <div class="product-thumbs">
                                 <div class="product-thumbs-track">
                                     <div data-imgbigurl="img/product-single/product-1.jpg"><img
-                                            src="/img/products/ipad.jfif" alt=""></div>
+                                            src="{{$product->picture_url}}" alt=""></div>
                                    
                                 </div>
                             </div>
@@ -68,13 +68,12 @@
                             <div class="product-details">
                                 <div class="pd-title">
                                     <span>Apples</span>
-                                    <h3>iPad Pro</h3>
+                                    <h3>{{$product->name}}</h3>
                                     <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                                 </div>
             
                                 <div class="pd-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor
-                                        sit amet, consectetur adipisicing elit, sed do mod tempor</p>
+                                    <p>{{$product->description}}</p>
                                     <h4>Rs 76,900 <span>Rs 80,000</span></h4>
                                 </div>
                                                              

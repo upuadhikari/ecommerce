@@ -17,13 +17,9 @@ Route::get('/', function () {
     return view('ecommerce');
 });
 
-Route::get('/details', function () {
-    return view('product');
-});
+Route::get('/products/details/{id}', 'ProductsController@show');
 
-Route::get('/shop', function () {
-    return view('shop');
-});
+Route::get('/shop', 'ProductsController@index');
 
 Route::get('/cart', function () {
     return view('cart');
