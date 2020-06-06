@@ -1,3 +1,8 @@
+<?php
+session_start();
+Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalue');
+//Session::get('email');
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -17,9 +22,13 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script> 
-    <script src="js/jquery-ui.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="js/jquery-3.3.1.min.js"></script>  -->
+    <!-- <script src="js/jquery-ui.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script> 
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
@@ -218,17 +227,15 @@
     </script>
       <!-- Bootstrap core JavaScript -->
   
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> 
+   <!--  <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> 
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
     <script src="{{ asset('js/jquery.dd.min.js') }}"></script>
     <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script> -->
+    
 </body>
 
 </html>

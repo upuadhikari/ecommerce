@@ -83,11 +83,12 @@
                                 <div class="img-box">
                                     <img src="{{$item->picture_url}}" class="img-responsive img-fluid" alt="">
                                 </div>
-                                <div class="thumb-content">
+                                <div class="thumb-content" id="findclosest">
+                                    <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
                                     <h4>{{$item->name}}</h4>
                                     <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
                                      </a>
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    <a class="btn btn-primary" id="addtocart">Add to Cart</a>
                                 </div>                      
                             </div>
                         </div>
@@ -274,6 +275,32 @@
         </div>
         <br>
         <br>
+
+        <!-- Ajax script for add to cart -->
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(document).on('click','#addtocart',function(e){
+                  e.stopPropagation();
+                  e.stopImmediatePropagation();
+
+                  var id=$(this).closest('#findclosest').find('.idofdata').val();
+                  alert(id);
+                  $.ajax({
+                    url: "/addtocarturl",
+                    type: "POST",
+                    data:{
+                        "_token": "{{ csrf_token() }}",
+                        idofdata:id},
+                    success: function(){
+                      alert('Added to database cart!');
+                      //location.reload();
+                    }
+                  });
+                });
+            });
+        </script>
+        <!-- ajax script end -->
     <!-- Latest Blog Section End -->
 
 
