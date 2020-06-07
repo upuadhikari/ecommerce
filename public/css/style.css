@@ -2067,6 +2067,13 @@ h2 {
     border: 1px solid #ebebeb;
 }
 
+.cart-table #quantity {
+    width: 60px;
+    font-size: 16px;
+    border: none;
+    background-color: #f8fafc;
+}
+
 .cart-table table tr th {
     font-size: 16px;
     color: #252525;

@@ -20,53 +20,22 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="cart-pic first-row"><img src="img/cart-page/product-1.jpg" alt=""></td>
+                                    <td class="cart-pic first-row"><img src="img/products/sony.jpg" alt="" style="width:100px"></td>
                                     <td class="cart-title first-row">
-                                        <h5>Pure Pineapple</h5>
+                                        <h5>Sony camera</h5>
                                     </td>
                                     <td class="p-price first-row">$60.00</td>
                                     <td class="qua-col first-row">
                                         <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
+                                          
+                                                <input type="number" id="quantity" value="1" min="0" max="20">
+                                            
                                         </div>
                                     </td>
                                     <td class="total-price first-row">$60.00</td>
                                     <td class="close-td first-row"><i class="ti-close"></i></td>
                                 </tr>
-                                <tr>
-                                    <td class="cart-pic"><img src="img/cart-page/product-2.jpg" alt=""></td>
-                                    <td class="cart-title">
-                                        <h5>American lobster</h5>
-                                    </td>
-                                    <td class="p-price">$60.00</td>
-                                    <td class="qua-col">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="total-price">$60.00</td>
-                                    <td class="close-td"><i class="ti-close"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="cart-pic"><img src="img/cart-page/product-3.jpg" alt=""></td>
-                                    <td class="cart-title">
-                                        <h5>Guangzhou sweater</h5>
-                                    </td>
-                                    <td class="p-price">$60.00</td>
-                                    <td class="qua-col">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="total-price">$60.00</td>
-                                    <td class="close-td"><i class="ti-close"></i></td>
-                                </tr>
+                               
                             </tbody>
                         </table>
                     </div>
@@ -83,7 +52,7 @@
                                 <a href="/checkout" class="proceed-btn">PROCEED TO CHECK OUT</a>
                             </div>
                         </div>
-                    </>
+                    </div>
                 </div>
             </div>
         </div>

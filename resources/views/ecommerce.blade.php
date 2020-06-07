@@ -29,7 +29,6 @@
   </a>
 </div>
 
-
 <!---Product slider--->
 
 <div class="slider">
@@ -44,7 +43,7 @@
                     <div class="row">
 
 
-           @foreach($items as $item)
+       @foreach($items as $item)
                     <!-- start here -->
                         <div class="col-sm-3" >
                             <a href="/details">
@@ -52,14 +51,15 @@
                                 <div class="img-box">
                                     <img src="{{$item->picture_url}}" class="img-responsive img-fluid" alt="">
                                 </div>
-                                <div class="thumb-content">
+                                <div class="thumb-content" id="findclosest">
+                                    <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
                                     <h4>{{$item->name}}</h4>
                                     <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
                                      </a>
-                                     @guest 
-                                    <a href="/login" class="btn btn-primary">Add to Cart</a>
+                                     @guest
+                                    <a class="btn btn-primary" href="/login" id="addtocart">Add to Cart</a>
                                     @else
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    <a class="btn btn-primary" id="addtocart">Add to cart</a>
                                     @endguest
                                 </div>                      
                             </div>
@@ -82,7 +82,7 @@
                                     <h4>Sony Play Station</h4>
                                     <p class="item-price"><strike>Rs 48,900</strike> <span>Rs 46,900</span></p>
                                     </a>                               
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    <a href="#" class="btn btn-primary">view</a>
                                 </div>                      
                             </div>
                         </div>
@@ -199,11 +199,11 @@
             </a>
         </div>
         @guest
-        <center><a href="/login"><button id="view-more">view more</button></a></center>
+        <center><a href="/shop"><button id="view-more">view more</button></a></center>
         @else
         <center><a href="/shop"><button id="view-more">view more</button></a></center>
         @endguest
-    </div>
+        </div>
     </div>
     <hr>
 </div>
@@ -252,8 +252,36 @@
         </div>
         <br>
         <br>
+
+        <!-- Ajax script for add to cart -->
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(document).on('click','#addtocart',function(e){
+                  e.stopPropagation();
+                  e.stopImmediatePropagation();
+                  var id=$(this).closest('#findclosest').find('.idofdata').val();
+                  alert(id);
+                  $.ajax({
+                    url: "/addtocarturl",
+                    type: "POST",
+                    data:{
+                        "_token": "{{ csrf_token() }}",
+                        idofdata:id},
+                    success: function(){
+                      alert('Added to database cart!');
+                      //location.reload();
+                    }
+                  });
+                });
+            });
+        </script>
+        <!-- ajax script end -->
     <!-- Latest Blog Section End -->
 
 
 
 @endsection
+
+
+

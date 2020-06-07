@@ -1,3 +1,8 @@
+<?php
+session_start();
+Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalue');
+//Session::get('email');
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -17,9 +22,13 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script> 
-    <script src="js/jquery-ui.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="js/jquery-3.3.1.min.js"></script>  -->
+    <!-- <script src="js/jquery-ui.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script> 
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
@@ -31,14 +40,12 @@
     <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
-    <!-- <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css"> -->
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css">
 
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> 
-    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
 
 </head>
 
@@ -118,37 +125,30 @@
                                 @guest
                                  <a href="/login"><button type="button"><i class="ti-search"></i></button></a>
                                  @else
-                                 <a href="#"><button type="button"><i class="ti-search"></i></button></a>
+                                 <a href="/search"><button type="button"><i class="ti-search"></i></button></a>
                                  @endguest
                             </div>
 
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3" id="col3">  
-                              </li>
-                        @guest
-                            <div class="cart">
+                             <div class="cart">
+                                @guest
                                 <a href="/login"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
-                             </div> 
-                        @else
-                            <div class="cart">
+                                @else
                                 <a href="/cart"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
-                             </div> 
-                        @endguest   
-                         @guest
+                                @endguest
+                             </div>                                             
                             <ul class="shopnow">
                         <!-- Authentication Links -->
+                                @guest
                                 <li><a href="/login"><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
-                           </ul> 
-                        @else
-                            <ul class="shopnow">
-                        <!-- Authentication Links -->
+                                @else
                                 <li><a href="/shop"><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
-                           </ul> 
-                        @endguest                                                                      
-                            
+                                 @endguest
+                           </ul>
                     </div>
-                </>
+                </div>
             </div>
         </div>
     </header>
@@ -239,17 +239,14 @@
     </script>
       <!-- Bootstrap core JavaScript -->
   
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> 
+    <!-- <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>  -->
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
     <script src="{{ asset('js/jquery.dd.min.js') }}"></script>
     <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script> 
     
 </body>
 
