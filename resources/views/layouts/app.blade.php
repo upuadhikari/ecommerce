@@ -31,12 +31,14 @@
     <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
-    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <!-- <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css"> -->
 
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> 
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
 
 </head>
 
@@ -113,21 +115,40 @@
                         <div class="advanced-search">
                             <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
+                                @guest
+                                 <a href="/login"><button type="button"><i class="ti-search"></i></button></a>
+                                 @else
+                                 <a href="#"><button type="button"><i class="ti-search"></i></button></a>
+                                 @endguest
                             </div>
 
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3" id="col3">  
-                             <div class="cart">
+                              </li>
+                        @guest
+                            <div class="cart">
+                                <a href="/login"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
+                             </div> 
+                        @else
+                            <div class="cart">
                                 <a href="/cart"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
-                             </div>                                             
+                             </div> 
+                        @endguest   
+                         @guest
+                            <ul class="shopnow">
+                        <!-- Authentication Links -->
+                                <li><a href="/login"><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
+                           </ul> 
+                        @else
                             <ul class="shopnow">
                         <!-- Authentication Links -->
                                 <li><a href="/shop"><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
-                           </ul>
+                           </ul> 
+                        @endguest                                                                      
+                            
                     </div>
-                </div>
+                </>
             </div>
         </div>
     </header>
@@ -229,6 +250,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>

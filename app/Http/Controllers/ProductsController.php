@@ -12,6 +12,14 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function trendinghome()//this is to return trending product in landing page
+    {
+        $items = products::latest()->paginate(15);
+        return view('/ecommerce', ['items' => $items]);  
+    }
+
+
     public function index()
     {
         $items = products::latest()->paginate(15);

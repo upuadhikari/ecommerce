@@ -94,8 +94,8 @@
                                             <h5>{{$item->name}}</h5>
                                         </a>
                                         <div class="product-price">
-                                            Rs 76,900
-                                            <span>{{$item->price}}</span>
+                                            Rs {{$item->price}}
+                                            <span>Rs {{$item->price+$item->price*0.2}}</span>
                                         </div>
                                     </div>
                                 </div>
