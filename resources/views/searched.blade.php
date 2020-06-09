@@ -10,14 +10,13 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories">
-                            <li><a href="#">Smartphone</a></li>
+                            <li><a href="#">Mobile</a></li>
                             <li><a href="#">Desktop</a></li>
                             <li><a href="#">Laptop</a></li>
                             <li><a href="#">Speaker</a></li>
                             <li><a href="#">Tablet</a></li>
                             <li><a href="#">Camera</a></li>
                             <li><a href="#">Watch</a></li>
-                            <li><a href="#">Headset</a></li>
                         </ul>
                     </div>
                      <div class="filter-widget">
@@ -58,7 +57,7 @@
                     <div class="product-show-option">
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
-                              <p></p>
+                              <p>Seached results <i class="fas fa-arrow-right"></i></p>
                             </div>
                             <div class="col-lg-5 col-md-5 text-right">
                                 <p>Show 01- 09 Of 36 Product</p>
@@ -67,11 +66,11 @@
                     </div>
                     <div class="product-list">
                         <div class="row">
-                        @foreach($items as $item)
+                          @foreach($items as $item)
                             <div class="col-lg-4 col-sm-6">
-                                <div class="product-item" style="width: 75%; margin:20px auto;">
+                                <div class="product-item">
                                     <div class="pi-pic">
-                                        <img src="uploads/profile/{{$item->image}}" alt="">
+                                        <img src="{{$item->picture_url}}" alt="" >
                                         <div class="sale pp-sale">Sale</div>
                                         <div class="icon">
                                             <i class="icon_heart_alt"></i>
@@ -96,7 +95,7 @@
                                 </div>
                             </div>
                             @endforeach
-                           
+                     </div>                        
                 </div> 
             </div>
         </div>

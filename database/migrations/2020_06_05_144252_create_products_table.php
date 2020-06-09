@@ -17,13 +17,13 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('product_id');
             $table->string('name');
             $table->text('description');
-            $table->string('picture_url')->nullable();
             $table->float('rating')->default(0);
             $table->integer('available_stocks')->nullable();
             $table->integer('price');
             $table->integer('category_id')->nullable();
-            $table->integer('delivery_charge');
+            $table->integer('delivery_charge')->nullable();
             $table->integer('discount_percent')->default(0);
+            $table->mediumText('image')->nullable();
             $table->timestamps();
         });
     }

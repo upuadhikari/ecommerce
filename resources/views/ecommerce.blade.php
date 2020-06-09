@@ -16,7 +16,7 @@
       <img class="d-block w-100" src="/img/img2.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="/img/img3.jpg" alt="Third slide">
+      <img class="d-block w-100" src="/img/img4.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -29,24 +29,90 @@
   </a>
 </div>
 
-<!---Product slider--->
+<!---category slider--->
+ <div id="our-products" class="slider" data-aos="fade-left">
+        <h2 id="tp" ><b>Categories</b></h2>
+ </div>
+<div class="products">
+	<div id="container"> 
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="4000">
+		  <div class="carousel-inner">
+		    <div class="carousel-item active">
+		       <div class="row" id="product-row">
+		       	 <div class="col-md-3">
+                    <img src="/img/phone.jpg" id="image"> 
+                       <button id="btn">Phone</button>
+                 </div>
+		       	<div class="col-md-3">
+                       <img src="/img/desktop.jpg" id="image">
+                       <button id="btn">Desktop</button>
+                </div>
+		       	<div class="col-md-3">
+                       <img src="/img/laptop.jpg" id="image"> 
+                       <button id="btn">Laptop</button>                    
+                   </div>
+		       	<div class="col-md-3">
+                       <img src="/img/tablet.jpg" id="image">
+                       <button id="btn">Tablet</button>
+                   </div>
+		       </div>
+		    </div>
+		    <div class="carousel-item">
+		       <div class="row" id="product-row">
+		       	<div class="col-md-3">
+                       <img src="/img/headphone.jpg" id="image"> 
+                       <button id="btn">Headset</button>
+                   </div>
+		       	<div class="col-md-3">
+                       <img src="/img/camera.jpg" id="image"> 
+                       <button id="btn">Camera</button>
 
+                   </div>
+		       	<div class="col-md-3">
+                       <img src="/img/watch.jpg" id="image">
+                       <button id="btn">Watch</button>
+
+                   </div>
+		       	<div class="col-md-3">
+                       <img src="/img/speaker.jpg" id="image"> 
+                       <button id="btn">Speaker</button>
+
+                  </div>
+		       </div>
+		    </div>
+		  </div>
+		  <a class="carousel-control-prev" id="prev" href="#carouselExampleControls" role="button" data-slide="prev">
+		    <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" id="next" href="#carouselExampleControls" role="button" data-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+        </div>
+        <hr>
+	</div>
+<div>
+
+
+
+
+<!---product slider--->
 <div class="slider">
-    <div class="container">
+    <div id="container">
     <div class="row">
         <div class="col-md-12">
             <h2 id="tp" data-aos="fade-left">Trending <b>Products</b></h2>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0"> 
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000"> 
             <!-- Wrapper for carousel items -->
             <div class="carousel-inner">
                 <div class="item carousel-item active">
                     <div class="row">
 
 
-       @foreach($items as $item)
+       @foreach($items->take(4) as $item)
                     <!-- start here -->
                         <div class="col-sm-3" >
-                            <a href="/details">
                             <div class="thumb-wrapper">
                                 <div class="img-box">
                                     <img src="{{$item->picture_url}}" class="img-responsive img-fluid" alt="">
@@ -55,12 +121,9 @@
                                     <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
                                     <h4>{{$item->name}}</h4>
                                     <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
-                                     </a>
-                                     @guest
-                                    <a class="btn btn-primary" href="/login" id="addtocart">Add to Cart</a>
-                                    @else
-                                    <a class="btn btn-primary" id="addtocart">Add to cart</a>
-                                    @endguest
+                                    
+                                    <a href="/products/details/{{$item->product_id}}" class="btn btn-primary">More details</a>
+                                    
                                 </div>                      
                             </div>
                         </div>
@@ -72,122 +135,56 @@
                 </div>
                 <div class="item carousel-item">
                     <div class="row">
-                        <div class="col-sm-3">
-                            <a href="/details">
+                        
+            @foreach($items->skip(4)->take(4) as $item)
+                    <!-- start here -->
+                        <div class="col-sm-3" >
                             <div class="thumb-wrapper">
                                 <div class="img-box">
-                                    <img src="/img/products/ps.jpg" class="img-responsive img-fluid" alt="">
+                                    <img src="{{$item->picture_url}}" class="img-responsive img-fluid" alt="">
                                 </div>
-                                <div class="thumb-content">
-                                    <h4>Sony Play Station</h4>
-                                    <p class="item-price"><strike>Rs 48,900</strike> <span>Rs 46,900</span></p>
-                                    </a>                               
-                                    <a href="#" class="btn btn-primary">view</a>
+                                <div class="thumb-content" id="findclosest">
+                                    <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
+                                    <h4>{{$item->name}}</h4>
+                                    <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
+                                     @guest
+                                    <a class="btn btn-primary" href="/login" id="addtocart">Add to Cart</a>
+                                    @else
+                                    <a href="/products/details/{{$item->product_id}}" class="btn btn-primary">More details</a>
+                                    @endguest
                                 </div>                      
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <a href="/details">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="/img/products/m-pro.jpg" class="img-responsive img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Macbook Pro</h4>
-                                    <p class="item-price"><strike>Rs 1,09,900</strike> <span>Rs 99,900</span></p> 
-                                    </a>                                  
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                </div>                      
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <a href="/details">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="/img/products/bose.jpg" class="img-responsive img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Bose Speaker</h4>
-                                    <p class="item-price"><strike>Rs 10,900</strike> <span>Rs 9,900</span></p>
-                                    </a>
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                </div>                      
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <a href="/details">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="/img/products/s9.jpg" class="img-responsive img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Samsung Galaxy S9</h4>
-                                    <p class="item-price"><strike>Rs 99,900</strike> <span>Rs 96,900</span></p> 
-                                    </a>                               
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                </div>                      
-                            </div>
-                        </div>                      
+                     
+                    <!-- card end here -->
+                @endforeach
                     </div>
                 </div>
                 <div class="item carousel-item">
                     <div class="row">
-                        <div class="col-sm-3">
+                          @foreach($items->skip(8)->take(4) as $item)
+                    <!-- start here -->
+                        <div class="col-sm-3" >
                             <div class="thumb-wrapper">
                                 <div class="img-box">
-                                    <img src="/img/products/iphone.jfif" class="img-responsive img-fluid" alt="">
+                                    <img src="{{$item->picture_url}}" class="img-responsive img-fluid" alt="">
                                 </div>
-                                <div class="thumb-content">
-                                    <h4>iPhone 10 X</h4>
-                                   <p class="item-price"><strike>Rs 96,900</strike> <span>Rs 94,900</span></p>
-                                   </a>                                
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                <div class="thumb-content" id="findclosest">
+                                    <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
+                                    <h4>{{$item->name}}</h4>
+                                    <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
+                                     @guest
+                                    <a class="btn btn-primary" href="/login" id="addtocart">Add to Cart</a>
+                                    @else
+                                    <a href="/products/details/{{$item->product_id}}" class="btn btn-primary">More details</a>
+                                    @endguest
                                 </div>                      
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <a href="/details">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="/img/products/canon.png" class="img-responsive img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Canon DSLR</h4>
-                                    <p class="item-price"><strike>Rs 61,500</strike> <span>Rs 55,000</span></p>
-                                    </a>
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                </div>                      
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <a href="/details">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="/img/products/pixel.jpg" class="img-responsive img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Google Pixel</h4>
-                                    <p class="item-price"><strike>Rs 65,000</strike> <span>Rs 61,800</span></p>
-                                    </a>
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                </div>                      
-                            </div>
-                        </div>  
-                        <div class="col-sm-3">
-                            <a href="/details">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="/img/products/watch.jfif" class="img-responsive img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Apple Watch</h4>
-                                    <p class="item-price"><strike>Rs 45,000</strike> <span>Rs 40,000</span></p>
-                                     </a>
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                                </div>                      
-                            </div>
-                        </div>
-                    </div>
+                     
+                    <!-- card end here -->
+                @endforeach  
+                    
                 </div>
             </div>
             <!-- Carousel controls -->
@@ -199,9 +196,10 @@
             </a>
         </div>
         @guest
-        <center><a href="/shop"><button id="view-more">view more</button></a></center>
+        <center><a href="/login"><button id="view-more">View more</button></a></center>
         @else
-        <center><a href="/shop"><button id="view-more">view more</button></a></center>
+        <center><a href="/shop"><button id="view-more">View more</button></a></center>
+      
         @endguest
         </div>
     </div>

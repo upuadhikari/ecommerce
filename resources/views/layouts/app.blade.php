@@ -120,23 +120,28 @@ Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalu
                     </div>
                     <div class="col-lg-7 col-md-6">
                         <div class="advanced-search">
-                            <div class="input-group">
-                                <input type="text" placeholder="What do you need?">
+                     
+                                <form action="/searched" method="GET" class="input-group">
+                                @csrf
+                                <input type="text" placeholder="What do you need?" name="product" id="product">
                                 @guest
                                  <a href="/login"><button type="button"><i class="ti-search"></i></button></a>
                                  @else
-                                 <a href="/search"><button type="button"><i class="ti-search"></i></button></a>
+                                 <button type="submit"><i class="ti-search"></i></button>
                                  @endguest
-                            </div>
+                                 </form>
+                        
 
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3" id="col3">  
+                    <div class="col-lg-3 col-md-3" id="col3" >  
                              <div class="cart">
                                 @guest
                                 <a href="/login"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
+                                <a href="/login" ><img src="{{ asset('img/add.png') }}" id="add" /></a>
                                 @else
                                 <a href="/cart"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
+                                <a href="/create"><img src="{{ asset('img/add.png') }}" id="add" /></a>
                                 @endguest
                              </div>                                             
                             <ul class="shopnow">
@@ -233,7 +238,7 @@ Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalu
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript">
 	AOS.init();
     </script>

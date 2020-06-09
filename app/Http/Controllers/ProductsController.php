@@ -33,7 +33,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('create-ad');
     }
 
     /**
@@ -44,7 +44,24 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+    	$fileName = request('name') .  rand(0,99) . '.' .request()->file('profile')->getClientOriginalExtension();
+
+ 		$profile = request()->file('profile')->storeAs('uploads/profile/', $fileName);
+
+        $product = new products;
+        $product->name = request('name');
+        $product->description = request('description');
+        $product->available_stocks = request('stock');
+        $product->price = request('price');
+        $product->category_id = request('category');
+        $product->image = $fileName;
+
+        if ($product->save()) {
+
+ 			return redirect('/create')->with('status', 'product inserted successfully!!');
+ 		}
+
     }
 
     /**

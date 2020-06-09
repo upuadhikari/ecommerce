@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\products;
 
 class HomeController extends Controller
 {
@@ -24,5 +25,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function show()
+    {
+        $found = request('product');
+        $item = products::where('name', 'Like',"%$found%")->get();
+        return view("/searched",['items' => $item]);
     }
 }

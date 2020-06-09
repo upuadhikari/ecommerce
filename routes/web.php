@@ -19,9 +19,15 @@ Route::get('/products/details/{id}', 'ProductsController@show');
 
 Route::get('/shop', 'ProductsController@index');
 
+Route::get('/create', 'ProductsController@create');
+
+Route::post('/', 'ProductsController@store');
+
 Route::get('/cart', function () {
     return view('cart');
 });
+
+Route::get('/searched', 'HomeController@show');
 
 Route::get('/checkout', function () {
     return view('check-out');

@@ -40,6 +40,7 @@ body {
     font-family: "Muli", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
+    background-color: #fff !important;
 }
 
 h1,
@@ -282,7 +283,7 @@ h2 {
     background-color: #f8fafc;
     height: 50px;
     border-bottom: 1px solid #e0e0e0;
-    color: #000;
+    color: rgba(10, 10, 10, 0.7);
 }
 
 .header-top .container .ht-right {
@@ -297,7 +298,7 @@ h2 {
 }
 
 .header-top .container .ht-right #col3 {
-    color: #000;
+    color: rgba(10, 10, 10, 0.7);
     font-family: "Raleway", sans-serif;
 }
 
@@ -333,7 +334,7 @@ h2 {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 12px;
-    color: #000;
+    color: rgba(10, 10, 10, 0.7);
     font-family: "Raleway", sans-serif;
     margin-top: 20px;
     font-weight: lighter;
@@ -356,7 +357,7 @@ h2 {
     font-size: 14px;
     display: inline-block;
     margin-left: 15px;
-    color: #000;
+    color: rgba(10, 10, 10, 0.7);
 }
 
 .inner-header {
@@ -482,10 +483,17 @@ h2 {
     padding-left: 25px;
 }
 
-.inner-header #col3 #cart {
-    width: 32px;
-    padding-top: 7px;
+.inner-header #col3 #cart,
+#add {
+    width: 50px;
+    padding-top: 10px;
+    padding-right: 20px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.inner-header #col3 #add:hover {
+    transform: scale(1.1);
 }
 
 .inner-header #col3 .shopnow {
@@ -640,7 +648,97 @@ h2 {
 
 /*end carosuel*/
 
+/*categories*/
+#our-products {
+    margin: 0;
+    min-height: 80px;
+    background-color: #fff !important;
+}
+
+.products {
+    width: 100%;
+    background-color: #fff;
+    min-height: 180px;
+}
+
+.products #container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.products .carousel-control-prev,
+.products .carousel-control-next {
+    width: 30px;
+    height: 50px;
+    background-color: unset;
+}
+
+.products #prev,
+.products #next {
+    position: absolute;
+    top: 35%;
+}
+.products .carousel-control-prev-icon,
+.products .carousel-control-next-icon {
+    height: 40px;
+    width: 40px;
+    background-image: none;
+    background-color: unset;
+}
+
+.products .carousel-control-next-icon:after {
+    content: "\203A";
+    font-size: 35px;
+    color: #000;
+}
+
+.products .carousel-control-prev-icon:after {
+    content: "\2039";
+    font-size: 35px;
+    color: #000;
+}
+
+.products #product-row {
+    width: 100%;
+    min-height: 180px;
+    margin: 0 auto;
+}
+
+.products #image {
+    height: 90%;
+    margin-top: 10px;
+}
+
+.products #btn {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 90px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    background-color: #e7ab3c;
+    color: #fff;
+    border: 2px solid #fff;
+    font-weight: bolder;
+}
+
+.products #btn:hover {
+    border: 1px solid #e7ab3c;
+    color: #e7ab3c;
+    background-color: white;
+}
+
+/*end of categories*/
+
 /*slider*/
+.slider {
+    width: 100%;
+}
+
+.slider #container {
+    width: 85%;
+}
 
 .slider h2 {
     color: #000;
@@ -723,10 +821,6 @@ h2 {
     transition: 0.3s;
 }
 
-.slider .carousel .thumb-wrapper:hover {
-    transform: scale(1.1);
-}
-
 .slider .carousel .thumb-content {
     padding: 15px;
 }
@@ -734,7 +828,7 @@ h2 {
     height: 100px;
     width: 40px;
     background: none;
-    margin: 85px 0;
+    margin: 80px 0;
     background: rgba(0, 0, 0, 0.6);
 }
 .slider .carousel .carousel-control i {
@@ -2504,6 +2598,31 @@ h2 {
     padding: 13px 40px 11px;
     background: #000000;
     border-color: #000000;
+}
+.create-ad {
+    font-family: "Raleway", sans-serif;
+    width: 100%;
+    min-height: 650px;
+    margin-top: 20px;
+}
+
+.create-ad form input,
+textarea {
+    border-radius: 0% !important;
+}
+
+.create-ad form #create-btn {
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: #e7ab3c;
+    color: #fff;
+}
+
+.create-ad form #create-btn:hover {
+    border: 1px solid #e7ab3c;
+    background-color: #fff;
+    color: #e7ab3c;
 }
 
 /* ------------------------------ Responsive Media Styles ---------------------------- */

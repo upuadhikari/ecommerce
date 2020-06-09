@@ -1,34 +1,52 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace App\Http\Controllers;
 
-class CreateCartsTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('carts', function (Blueprint $table) {
-            $table->bigIncrements('cart_id');
-            $table->string('sessionkey');
-            $table->integer('product_id');
-            $table->integer('quantity');
-            $table->timestamps();
-        });
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Carts;
+use App\Products;
+use Session;
+
+class CartController extends Controller
+{	
+
+	public function cartdata()
+    {   //   DB::select('select quantity from carts where sessionkey = ?', ['javris']);
+        $key=Session::get('this_will_be_unique_session_key_later_on');
+        $items = DB::table('carts')
+            ->Join('products', 'products.product_id', '=', 'carts.product_id')
+            ->where('sessionkey', $key)
+            ->get();
+        return view('/cart', ['items' => $items]);  
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
+
+    public function adddata(Request $request)
     {
-        Schema::dropIfExists('carts');
+    	$cart = new Carts;
+
+    	$cart->product_id =$request->input('idofdata');
+    	$cart->sessionkey =Session::get('this_will_be_unique_session_key_later_on');
+    	$cart->quantity = 1;
+    	$cart->save();
+    	echo "Added";
     }
+
+    public function deletedata(Request $request)
+    {
+        $cart_id=$request->input('cartid');
+        DB::delete('delete from carts where cart_id = ?', [$cart_id]);
+        echo "Deleted";
+    }
+
+    public function updatedata(Request $request)
+    {
+        $cart_id=$request->input('cartid');
+        $quantity=$request->input('productquantity');
+        DB::update('update carts set quantity = ? where cart_id = ?',[$quantity,$cart_id]);
+        echo "Updated";
+    }
+
+
 }

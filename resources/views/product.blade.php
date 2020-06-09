@@ -78,9 +78,7 @@
                                 </div>
                                                              
                                 <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
-                                    </div>
+                                    <input type="number" id="quantity" value="1" min="0" max="20" style="border:none; width:50px;margin-right:15px; font-size:16px;background-color:unset;">
                                     <a href="#" class="primary-btn pd-cart">Add To Cart</a>
                                 </div>
                                 <ul class="pd-tags">
