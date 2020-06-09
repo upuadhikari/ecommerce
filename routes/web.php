@@ -19,9 +19,7 @@ Route::get('/products/details/{id}', 'ProductsController@show');
 
 Route::get('/shop', 'ProductsController@index');
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/cart','CartController@cartdata');
 
 Route::get('/checkout', function () {
     return view('check-out');
@@ -43,4 +41,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Routes for ajax request
 Route::post('/addtocarturl','CartController@adddata');
+Route::post('/deletefromcarturl','CartController@deletedata');
+Route::post('/updatecarturl','CartController@updatedata');
+
+
 //Route for ajax request end

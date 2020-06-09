@@ -57,14 +57,7 @@
                     <div class="product-show-option">
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
-                                <div class="select-option">
-                                    <select class="sorting">
-                                        <option value="">Default Sorting</option>
-                                    </select>
-                                    <select class="p-show">
-                                        <option value="">Show:</option>
-                                    </select>
-                                </div>
+                               
                             </div>
                             <div class="col-lg-5 col-md-5 text-right">
                                 <p>Show 01- 09 Of 36 Product</p>
@@ -75,7 +68,7 @@
                         <div class="row">
                         @foreach($items as $item)
                             <div class="col-lg-4 col-sm-6">
-                                <div class="product-item">
+                                <div class="product-item" id="findclosest">
                                     <div class="pi-pic">
                                         <img src="{{$item->picture_url}}" alt="" >
                                         <div class="sale pp-sale">Sale</div>
@@ -98,6 +91,8 @@
                                             <span>Rs {{$item->price+$item->price*0.2}}</span>
                                         </div>
                                     </div>
+                                    <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
+                                    <a class="btn btn-primary" id="addtocart">Add to cart</a>
                                 </div>
                             </div>
                             @endforeach
@@ -106,6 +101,31 @@
             </div>
         </div>
     </section>
+    <!-- Ajax script for add to cart -->
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(document).on('click','#addtocart',function(e){
+                  e.stopPropagation();
+                  e.stopImmediatePropagation();
+                  var id=$(this).closest('#findclosest').find('.idofdata').val();
+                  alert(id);
+                  $.ajax({
+                    url: "/addtocarturl",
+                    type: "POST",
+                    data:{
+                        "_token": "{{ csrf_token() }}",
+                        idofdata:id},
+                    success: function(){
+                      alert('Added to database cart!');
+                      //location.reload();
+                    }
+                  });
+                });
+            });
+        </script>
+        <!-- ajax script end -->
+        
     <!-- Product Shop Section End -->
   
 

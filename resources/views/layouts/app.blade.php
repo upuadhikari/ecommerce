@@ -40,7 +40,7 @@ Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalu
     <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
-    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css">
 
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
 
@@ -122,18 +122,32 @@ Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalu
                         <div class="advanced-search">
                             <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
+                                @guest
+                                 <a href="/login"><button type="button"><i class="ti-search"></i></button></a>
+                                 @else
+                                 <a href="/search"><button type="button"><i class="ti-search"></i></button></a>
+                                 @endguest
                             </div>
 
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3" id="col3">  
                              <div class="cart">
+                                @guest
+                                <!-- this should be a href="/login"-->
                                 <a href="/cart"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
+                                @else
+                                <a href="/cart"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
+                                @endguest
                              </div>                                             
                             <ul class="shopnow">
                         <!-- Authentication Links -->
+                                @guest
+                                <!-- this should be a href="/login"-->
                                 <li><a href="/shop"><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
+                                @else
+                                <li><a href="/shop"><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
+                                 @endguest
                            </ul>
                     </div>
                 </div>
@@ -223,18 +237,18 @@ Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalu
     <!-- Js Plugins -->
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript">
-	AOS.init();
+    AOS.init();
     </script>
       <!-- Bootstrap core JavaScript -->
   
-   <!--  <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> 
+    <!-- <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>  -->
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
     <script src="{{ asset('js/jquery.dd.min.js') }}"></script>
     <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script> -->
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script> 
     
 </body>
 

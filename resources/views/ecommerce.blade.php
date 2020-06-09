@@ -29,38 +29,6 @@
   </a>
 </div>
 
- <div id="our-products" class="slider">
-        <h2 id="tp" data-aos="fade-right" >Our <b>Products</b></h2>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0"> 
- </div>
-
- 
-  <div class="products">
-      <div class="content">
-          <div>
-             <img src="img/phone.jpg" id="phone" />
-             <button id="btn">Phone</button>
-          </div>
-          <div>
-             <img src="img/desktop.jpg" id="desktop" />
-             <button id="btn">Desktop</button>
-
-          </div>
-          <div>
-             <img src="img/laptop.jpg" id="laptop" />
-             <button id="btn">Laptop</button>
-
-          </div>
-          <div>
-             <img src="img/tablet.jpg" id="tablet" />
-             <button id="btn">Tablets</button>
-
-          </div>
-      </div>
-</div>
-
-
-
 <!---Product slider--->
 
 <div class="slider">
@@ -75,7 +43,7 @@
                     <div class="row">
 
 
-@foreach($items as $item)
+       @foreach($items as $item)
                     <!-- start here -->
                         <div class="col-sm-3" >
                             <a href="/details">
@@ -88,7 +56,13 @@
                                     <h4>{{$item->name}}</h4>
                                     <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
                                      </a>
-                                    <a class="btn btn-primary" id="addtocart">Add to Cart</a>
+                                    <!-- this should be at buttom of end statement -->
+                                    <a class="btn btn-primary" id="addtocart">Add to cart</a>
+                                     <!-- @guest
+                                    <a class="btn btn-primary" href="/login" id="addtocart">Add to Cart</a>
+                                    @else
+                                        this is the place to put anchor tag
+                                    @endguest -->
                                 </div>                      
                             </div>
                         </div>
@@ -110,7 +84,7 @@
                                     <h4>Sony Play Station</h4>
                                     <p class="item-price"><strike>Rs 48,900</strike> <span>Rs 46,900</span></p>
                                     </a>                               
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    <a href="#" class="btn btn-primary">view</a>
                                 </div>                      
                             </div>
                         </div>
@@ -226,6 +200,11 @@
                 <i class="fa fa-angle-right"></i>
             </a>
         </div>
+        @guest
+        <center><a href="/shop"><button id="view-more">view more</button></a></center>
+        @else
+        <center><a href="/shop"><button id="view-more">view more</button></a></center>
+        @endguest
         </div>
     </div>
     <hr>
@@ -283,7 +262,6 @@
                 $(document).on('click','#addtocart',function(e){
                   e.stopPropagation();
                   e.stopImmediatePropagation();
-
                   var id=$(this).closest('#findclosest').find('.idofdata').val();
                   alert(id);
                   $.ajax({
