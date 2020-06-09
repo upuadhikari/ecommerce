@@ -115,7 +115,7 @@
                         <div class="col-sm-3" >
                             <div class="thumb-wrapper">
                                 <div class="img-box">
-                                    <img src="{{$item->picture_url}}" class="img-responsive img-fluid" alt="">
+                                    <img src="/uploads/profile/{{ $item->image}}" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content" id="findclosest">
                                     <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
@@ -141,7 +141,7 @@
                         <div class="col-sm-3" >
                             <div class="thumb-wrapper">
                                 <div class="img-box">
-                                    <img src="{{$item->picture_url}}" class="img-responsive img-fluid" alt="">
+                                    <img src="/uploads/profile/{{ $item->image}}" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content" id="findclosest">
                                     <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
@@ -167,7 +167,7 @@
                         <div class="col-sm-3" >
                             <div class="thumb-wrapper">
                                 <div class="img-box">
-                                    <img src="{{$item->picture_url}}" class="img-responsive img-fluid" alt="">
+                                    <img src="/uploads/profile/{{ $item->image}}" class="img-responsive img-fluid" alt="">
                                 </div>
                                 <div class="thumb-content" id="findclosest">
                                     <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>

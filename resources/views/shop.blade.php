@@ -10,14 +10,13 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories">
-                            <li><a href="#">Smartphone</a></li>
+                            <li><a href="#">Mobile</a></li>
                             <li><a href="#">Desktop</a></li>
                             <li><a href="#">Laptop</a></li>
                             <li><a href="#">Speaker</a></li>
                             <li><a href="#">Tablet</a></li>
                             <li><a href="#">Camera</a></li>
                             <li><a href="#">Watch</a></li>
-                            <li><a href="#">Headset</a></li>
                         </ul>
                     </div>
                      <div class="filter-widget">
@@ -58,7 +57,7 @@
                     <div class="product-show-option">
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
-                              <p></p>
+                               
                             </div>
                             <div class="col-lg-5 col-md-5 text-right">
                                 <p>Show 01- 09 Of 36 Product</p>
@@ -69,17 +68,17 @@
                         <div class="row">
                         @foreach($items as $item)
                             <div class="col-lg-4 col-sm-6">
-                                <div class="product-item" style="width: 75%; margin:20px auto;">
+                                <div class="product-item" id="findclosest" style="width: 75%; margin:20px auto;">
                                     <div class="pi-pic">
-                                        <img src="uploads/profile/{{$item->image}}" alt="">
+                                        <img src="/uploads/profile/{{ $item->image}}" alt="" >
                                         <div class="sale pp-sale">Sale</div>
                                         <div class="icon">
                                             <i class="icon_heart_alt"></i>
                                         </div>
                                         <ul>
-
+                                            
                                             <li class="quick-view"><a href="/products/details/{{$item->product_id}}">+ Quick View</a></li>
-   
+                                            
                                         </ul>
                                     </div>
                                     <div class="pi-text">
@@ -90,10 +89,12 @@
                                         <div class="product-price">
                                             Rs {{$item->price}}
                                             <span>Rs {{$item->price+$item->price*0.2}}</span>
-                             
                                         </div>
                                     </div>
+                                    <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
+                                   
                                 </div>
+                                 <center><button id="addtocart">Add to cart</button></center>
                             </div>
                             @endforeach
                            
@@ -101,6 +102,31 @@
             </div>
         </div>
     </section>
+    <!-- Ajax script for add to cart -->
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(document).on('click','#addtocart',function(e){
+                  e.stopPropagation();
+                  e.stopImmediatePropagation();
+                  var id=$(this).closest('#findclosest').find('.idofdata').val();
+                  alert(id);
+                  $.ajax({
+                    url: "/addtocarturl",
+                    type: "POST",
+                    data:{
+                        "_token": "{{ csrf_token() }}",
+                        idofdata:id},
+                    success: function(){
+                      alert('Added to database cart!');
+                      //location.reload();
+                    }
+                  });
+                });
+            });
+        </script>
+        <!-- ajax script end -->
+        
     <!-- Product Shop Section End -->
   
 

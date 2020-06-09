@@ -59,7 +59,7 @@
                             <div class="product-thumbs">
                                 <div class="product-thumbs-track">
                                     <div data-imgbigurl="img/product-single/product-1.jpg"><img
-                                            src="{{$product->picture_url}}" alt=""></div>
+                                            src="/uploads/profile/{{$product->image}}" alt=""></div>
                                    
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
             
                                 <div class="pd-desc">
                                     <p>{{$product->description}}</p>
-                                    <h4>Rs 76,900 <span>Rs 80,000</span></h4>
+                                    <h4>{{$product->price}} <span>Rs {{$product->price+$product->price*0.2}}</span></h4>
                                 </div>
                                                              
                                 <div class="quantity">
@@ -104,7 +104,7 @@
                                             <tr>
                                                 <td class="p-catagory">Price</td>
                                                 <td>
-                                                    <div class="p-price">$495.00</div>
+                                                    <div class="p-price">{{$product->price}}</div>
                                                 </td>
                                             </tr>
                                             <tr>

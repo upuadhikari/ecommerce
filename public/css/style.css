@@ -2094,8 +2094,19 @@ h2 {
     line-height: 39px;
 }
 
-.prduct-list .product-item {
+.product-list .product-item {
     margin-bottom: 25px;
+}
+
+.product-list #addtocart {
+    width: 120px;
+    height: 40px;
+    background-color: unset;
+    border: 1px solid #000;
+}
+.product-list #addtocart:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 .loading-more {
