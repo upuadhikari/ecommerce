@@ -41,19 +41,19 @@
 		       <div class="row" id="product-row">
 		       	 <div class="col-md-3">
                     <img src="/img/phone.jpg" id="image"> 
-                       <button id="btn">Phone</button>
+                       <a href="/category/search/4"><button id="btn">Phone</button></a>
                  </div>
 		       	<div class="col-md-3">
                        <img src="/img/desktop.jpg" id="image">
-                       <button id="btn">Desktop</button>
+                       <a href="/category/search/2"><button id="btn">Desktop</button></a>
                 </div>
 		       	<div class="col-md-3">
                        <img src="/img/laptop.jpg" id="image"> 
-                       <button id="btn">Laptop</button>                    
+                       <a href="/category/search/1"><button id="btn">Laptop</button></a>                    
                    </div>
 		       	<div class="col-md-3">
                        <img src="/img/tablet.jpg" id="image">
-                       <button id="btn">Tablet</button>
+                       <a href="/category/search/3"><button id="btn">Tablet</button></a>
                    </div>
 		       </div>
 		    </div>
@@ -61,21 +61,21 @@
 		       <div class="row" id="product-row">
 		       	<div class="col-md-3">
                        <img src="/img/headphone.jpg" id="image"> 
-                       <button id="btn">Headset</button>
+                       <a href="/category/search/7"><button id="btn">Headset</button></a>
                    </div>
 		       	<div class="col-md-3">
                        <img src="/img/camera.jpg" id="image"> 
-                       <button id="btn">Camera</button>
+                       <a href="/category/search/8"><button id="btn">Camera</button></a>
 
                    </div>
 		       	<div class="col-md-3">
                        <img src="/img/watch.jpg" id="image">
-                       <button id="btn">Watch</button>
+                       <a href="/category/search/5"><button id="btn">Watch</button></a>
 
                    </div>
 		       	<div class="col-md-3">
                        <img src="/img/speaker.jpg" id="image"> 
-                       <button id="btn">Speaker</button>
+                       <a href="/category/search/6"><button id="btn">Speaker</button></a>
 
                   </div>
 		       </div>

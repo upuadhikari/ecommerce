@@ -20,10 +20,11 @@ class CreateProductsTable extends Migration
             $table->float('rating')->default(0);
             $table->integer('available_stocks')->nullable();
             $table->integer('price');
-            $table->integer('category_id')->nullable();
+            $table->integer('category_id')->reference('id')->on('categories')->nullable();
             $table->integer('delivery_charge')->nullable();
             $table->integer('discount_percent')->default(0);
             $table->mediumText('image')->nullable();
+            $table->integer('user_id')->reference('id')->on('users')->nullable();
             $table->timestamps();
         });
     }

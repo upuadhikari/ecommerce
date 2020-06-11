@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+         view()->composer('*', function ($view) {
+             $someVar = 'some var value';
+             $view->with(['someVar' => $someVar]);
+         });
     }
 }

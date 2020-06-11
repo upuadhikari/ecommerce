@@ -9,15 +9,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
-                        <ul class="filter-catagories">
-                            <li><a href="#">Mobile</a></li>
-                            <li><a href="#">Desktop</a></li>
-                            <li><a href="#">Laptop</a></li>
-                            <li><a href="#">Speaker</a></li>
-                            <li><a href="#">Tablet</a></li>
-                            <li><a href="#">Camera</a></li>
-                            <li><a href="#">Watch</a></li>
-                        </ul>
+                       @include('sidebar')
                     </div>
                      <div class="filter-widget">
                         <h4 class="fw-title">Brand</h4>
@@ -68,9 +60,9 @@
                         <div class="row">
                         @foreach($items as $item)
                             <div class="col-lg-4 col-sm-6">
-                                <div class="product-item" id="findclosest" style="width: 75%; margin:20px auto;">
+                                <div class="product-item" id="findclosest" style="width:75%; margin:0 auto;">
                                     <div class="pi-pic">
-                                        <img src="/uploads/profile/{{ $item->image}}" alt="" >
+                                        <img src="/uploads/profile/{{$item->image}}" alt="" >
                                         <div class="sale pp-sale">Sale</div>
                                         <div class="icon">
                                             <i class="icon_heart_alt"></i>
@@ -78,11 +70,11 @@
                                         <ul>
                                             
                                             <li class="quick-view"><a href="/products/details/{{$item->product_id}}">+ Quick View</a></li>
-                                            
+                                           
                                         </ul>
                                     </div>
                                     <div class="pi-text">
-                                        <div class="catagory-name">Tablet</div>
+                                        <div class="catagory-name">{{$item->category->name}}</div>
                                         <a href="#">
                                             <h5>{{$item->name}}</h5>
                                         </a>
@@ -94,6 +86,8 @@
                                     <input type="text" value="{{$item->product_id}}" id="idpass" class="idofdata"  hidden>
                                    
                                 </div>
+                            
+                                <br>
                                  <center><button id="addtocart">Add to cart</button></center>
                             </div>
                             @endforeach

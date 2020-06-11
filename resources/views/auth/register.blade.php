@@ -16,7 +16,7 @@
                                
     
                                 <div class="col-md-12">
-                                    <input placeholder="Fullname*" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    <input placeholder="Fullname*" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="off" autofocus>
     
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">

@@ -27,6 +27,20 @@ Route::get('/cart','CartsController@cartdata');
 
 Route::get('/searched', 'HomeController@show');
 
+Route::get('/category/search/{id}', 'CategoriesController@index');
+
+Route::get('/myproduct/{id}', 'ProductsController@myproducts'); 
+
+Route::get('/myproducts/{id}/edit','ProductsController@edit');
+
+Route::put('/myproducts/{id}','ProductsController@update');
+
+Route::get('/myproducts/delete/{id}','ProductsController@destroy');
+
+
+
+
+
 Route::get('/checkout', function () {
     return view('check-out');
 });

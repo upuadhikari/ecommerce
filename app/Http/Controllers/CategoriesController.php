@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\categories;
+use App\products;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -12,9 +13,10 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $citems = products::where('category_id',$id)->get();
+        return view('/categorized-search',['citems' => $citems]);
     }
 
     /**

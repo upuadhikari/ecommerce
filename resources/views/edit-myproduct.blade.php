@@ -17,25 +17,27 @@
         <div class="col-md-4">
         </div>
      <div class="col-md-4">
-         <form method="POST" action="/" enctype="multipart/form-data">
+         <form method="POST" action="/myproducts/{{ $item->product_id }}" enctype="multipart/form-data">
            @csrf
+
+           @method('PUT')
             <div class="form-group" @error('name') has-error @enderror>
                 <label for="exampleFormControlInput1">Product name*</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="{{ $item->name }}">
                 @error('name')
                 <p class="alert-danger">{{ $message }}</p>
                 @enderror
             </div>
             <div class="form-group" @error('price') has-error @enderror>
                 <label for="exampleFormControlInput1">Price (Rs)*</label>
-                <input style="font-family:sans-serif;" type="text" class="form-control" id="exampleFormControlInput1" name="price">
+                <input style="font-family:sans-serif;" type="text" class="form-control" id="exampleFormControlInput1" name="price" value="{{ $item->price }}">
                  @error('price')
                 <p class="alert-danger">{{ $message }}</p>
                 @enderror
             </div>
             <div class="form-group" @error('stock') has-error @enderror>
                  <label for="exampleFormControlInput1">In stock*</label>
-                 <input type="number" class="form-control" value="1" id="exampleFormControlInput1" name="stock" min="0" max="100">
+                 <input type="number" class="form-control" value="{{ $item->available_stocks }}" id="exampleFormControlInput1" name="stock" min="0" max="100">
                   @error('stock')
                 <p class="alert-danger">{{ $message }}</p>
                 @enderror
@@ -60,12 +62,12 @@
             </div>
             <div class="form-group" @error('description') has-error @enderror>
                 <label for="exampleFormControlTextarea1">Product description*</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" >{{ $item->description }}</textarea>
                  @error('description')
                 <p class="alert-danger">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="custom-file" @error('profile') has-error @enderror>
+             <div class="custom-file" @error('profile') has-error @enderror>
                 <label class="profile" for="profile">
                     <input type="file" name="profile" width="120">
                 </label>
@@ -73,7 +75,7 @@
                 <p class="alert-danger">{{ $message }}</p>
                 @enderror
             </div><br><br>
-            <button id="create-btn">Create</button>
+            <button id="create-btn">Update</button>
         </form>
      </div>
         <div class="col-md-4">

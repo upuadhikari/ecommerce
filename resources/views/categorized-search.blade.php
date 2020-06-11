@@ -58,7 +58,7 @@
                     </div>
                     <div class="product-list">
                         <div class="row">
-                          @foreach($items as $item)
+                          @foreach($citems as $item)
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-item" style="width:75%; margin:0 auto;">
                                     <div class="pi-pic">
@@ -74,7 +74,7 @@
                                         </ul>
                                     </div>
                                     <div class="pi-text">
-                                        <div class="catagory-name">Tablet</div>
+                                        <div class="catagory-name">{{$item->category->name}}</div>
                                         <a href="#">
                                             <h5>{{$item->name}}</h5>
                                         </a>

@@ -15,14 +15,14 @@ class ProductsController extends Controller
 
     public function trendinghome()//this is to return trending product in landing page
     {
-        $items = products::latest()->paginate(15);
+        $items = products::latest()->paginate(12);
         return view('/ecommerce', ['items' => $items]);  
     }
 
 
     public function index()
     {
-        $items = products::latest()->paginate(15);
+        $items = products::latest()->paginate(12);
         return view('/shop', ['items' => $items]);  
     }
 
@@ -45,6 +45,13 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
 
+        request()->validate([
+            'name' => 'required',
+            'description' => 'required',    
+            'price' => 'required'
+           
+        ]);
+
     	$fileName = request('name') .  rand(0,99) . '.' .request()->file('profile')->getClientOriginalExtension();
 
  		$profile = request()->file('profile')->storeAs('uploads/profile/', $fileName);
@@ -56,10 +63,12 @@ class ProductsController extends Controller
         $product->price = request('price');
         $product->category_id = request('category');
         $product->image = $fileName;
+        $product->user_id = auth()->user()->id;
+
 
         if ($product->save()) {
 
- 			return redirect('/create')->with('status', 'product inserted successfully!!');
+ 			return redirect()->back()->with('status', 'product inserted successfully!!');
  		}
 
     }
@@ -73,9 +82,15 @@ class ProductsController extends Controller
     public function show($id)
     {
 
-        $item = products::where('product_id',$id)->first();;
+        $item = products::where('product_id',$id)->first();
         return view('/product', ['product' => $item]);  
 
+    }
+
+    public function myproducts($id)
+    {
+          $myitems = products::where('user_id',$id)->get();
+          return view('/myproduct',['myproducts' => $myitems]);
     }
 
     /**
@@ -84,9 +99,10 @@ class ProductsController extends Controller
      * @param  \App\products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit(products $products)
+    public function edit($id)
     {
-        //
+        $items = products::where('product_id',$id)->first();
+        return view('edit-myproduct',['item' => $items]);
     }
 
     /**
@@ -96,9 +112,35 @@ class ProductsController extends Controller
      * @param  \App\products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, products $products)
+    public function update($id)
     {
-        //
+
+          request()->validate([
+            'name' => 'required',
+            'description' => 'required',    
+            'price' => 'required'
+           
+        ]);
+
+    	$fileName = request('name') .  rand(0,99) . '.' .request()->file('profile')->getClientOriginalExtension();
+
+ 		$profile = request()->file('profile')->storeAs('uploads/profile/', $fileName);
+
+        $product = products::where('product_id', $id)->first();
+        $product->name = request('name');
+        $product->description = request('description');
+        $product->available_stocks = request('stock');
+        $product->price = request('price');
+        $product->category_id = request('category');
+        $product->image = $fileName;
+        $product->user_id = auth()->user()->id;
+      
+         if ($product->save()) {
+
+ 			return redirect("/myproducts/{{auth::user()->id}}")->with('status', 'product updated successfully!!');
+ 		}
+ 		
+
     }
 
     /**
@@ -107,8 +149,11 @@ class ProductsController extends Controller
      * @param  \App\products  $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy(products $products)
+    public function destroy($id)
     {
-        //
+         
+        products::where('product_id',$id)->delete();
+
+        return redirect()->back()->with('status', 'product deleted successfully!!');
     }
 }

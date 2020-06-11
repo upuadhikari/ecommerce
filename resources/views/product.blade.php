@@ -9,15 +9,7 @@
                 <div class="col-lg-3">
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
-                        <ul class="filter-catagories">
-                            <li><a href="#">Mobile</a></li>
-                            <li><a href="#">Desktop</a></li>
-                            <li><a href="#">Laptop</a></li>
-                            <li><a href="#">Speaker</a></li>
-                            <li><a href="#">Tablet</a></li>
-                            <li><a href="#">Camera</a></li>
-                            <li><a href="#">Watch</a></li>
-                        </ul>
+                         @include('sidebar')
                     </div>
                     <div class="filter-widget">
                         <h4 class="fw-title">Brand</h4>
@@ -82,7 +74,7 @@
                                     <a href="#" class="primary-btn pd-cart">Add To Cart</a>
                                 </div>
                                 <ul class="pd-tags">
-                                    <li><span>CATEGORIES</span>: Tablet</li>
+                                    <li><span>CATEGORIES: </span>{{$product->category->name}}</li>
                                 </ul>
                                 <div class="pd-share">
                                     <div class="pd-social">
@@ -94,8 +86,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-tab">
-                 
+                           
                         <div class="taab-item-content">
                             <div class="taab-content">
                                 <div class="taab-pane">
@@ -172,7 +163,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </div>
     </section>
     <!-- Product Shop Section End -->

@@ -2099,14 +2099,26 @@ h2 {
 }
 
 .product-list #addtocart {
-    width: 120px;
-    height: 40px;
+    width: 100px;
+    height: 35px;
     background-color: unset;
     border: 1px solid #000;
+    margin-bottom: 30px;
 }
 .product-list #addtocart:hover {
     background-color: #000;
     color: #fff;
+}
+
+.product-list .modal-footer button {
+    width: 80px;
+    height: 35px;
+    border-radius: 0%;
+}
+
+.product-list .modal-footer .btn-2 {
+    background-color: #e7ab3c;
+    color: white;
 }
 
 .loading-more {
@@ -2390,6 +2402,10 @@ h2 {
     text-align: center;
 }
 
+.alert-danger {
+    font-size: 12px;
+}
+
 /*---------------------
   Check Out
 -----------------------*/
@@ -2634,6 +2650,11 @@ textarea {
     border: 1px solid #e7ab3c;
     background-color: #fff;
     color: #e7ab3c;
+}
+
+input[type="file"] {
+    font-size: 12px;
+    background-color: #fff !important;
 }
 
 /* ------------------------------ Responsive Media Styles ---------------------------- */
