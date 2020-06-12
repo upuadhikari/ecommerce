@@ -118,7 +118,9 @@ class ProductsController extends Controller
           request()->validate([
             'name' => 'required',
             'description' => 'required',    
-            'price' => 'required'
+            'price' => 'required | numeric',
+            'available_stocks' => 'required',
+            'category_id' => 'required'
            
         ]);
 

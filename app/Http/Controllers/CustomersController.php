@@ -14,7 +14,7 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        //
+        return view('/check-out');
     }
 
     /**
@@ -35,7 +35,12 @@ class CustomersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $method = request('payment');
+        
+        if($method == "paypal")
+        {
+            echo("working");
+        }
     }
 
     /**

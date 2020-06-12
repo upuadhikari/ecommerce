@@ -2657,6 +2657,9 @@ input[type="file"] {
     background-color: #fff !important;
 }
 
+#paypal-button-container {
+    margin-top: 10px;
+}
 /* ------------------------------ Responsive Media Styles ---------------------------- */
 
 @media only screen and (min-width: 1200px) and (max-width: 1920px) {
