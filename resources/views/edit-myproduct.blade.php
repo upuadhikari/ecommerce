@@ -30,7 +30,7 @@
             </div>
             <div class="form-group" @error('price') has-error @enderror>
                 <label for="exampleFormControlInput1">Price (Rs)*</label>
-                <input style="font-family:sans-serif;" type="text" class="form-control" id="exampleFormControlInput1" name="price" value="{{ $item->price }}">
+                <input style="font-family:sans-serif;" type="number" class="form-control" id="exampleFormControlInput1" name="price" value="{{ $item->price }}">
                  @error('price')
                 <p class="alert-danger">{{ $message }}</p>
                 @enderror

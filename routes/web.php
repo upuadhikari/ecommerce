@@ -38,12 +38,17 @@ Route::put('/myproducts/{id}','ProductsController@update');
 Route::get('/myproducts/delete/{id}','ProductsController@destroy');
 
 
+Route::get('/checkout', 'CustomersController@index');
 
+Route::post('/checkout/payment','CustomersController@store');
 
-
-Route::get('/checkout', function () {
-    return view('check-out');
+Route::get('/paypal', function(){
+         return view('/welcome');
 });
+
+
+
+
 
 Auth::routes();
 

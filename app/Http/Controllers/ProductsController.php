@@ -51,11 +51,8 @@ class ProductsController extends Controller
             'price' => 'required'
            
         ]);
-        
-         $fileName='default.png';
-        if (request()->file('profile')!=Null) {
+
         $fileName = request('name') .  rand(0,99) . '.' .request()->file('profile')->getClientOriginalExtension();
-        }
 
         $profile = request()->file('profile')->storeAs('uploads/profile/', $fileName);
 
@@ -121,14 +118,13 @@ class ProductsController extends Controller
           request()->validate([
             'name' => 'required',
             'description' => 'required',    
-            'price' => 'required'
+            'price' => 'required | numeric',
+            'available_stocks' => 'required',
+            'category_id' => 'required'
            
         ]);
-          $fileName='default.png';
 
-    	if (request()->file('profile')!=Null) {
         $fileName = request('name') .  rand(0,99) . '.' .request()->file('profile')->getClientOriginalExtension();
-        }
 
         $profile = request()->file('profile')->storeAs('uploads/profile/', $fileName);
 
