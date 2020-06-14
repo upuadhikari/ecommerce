@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\products;
 use Illuminate\Http\Request;
+use Session;
 
 class ProductsController extends Controller
 {
@@ -14,9 +14,30 @@ class ProductsController extends Controller
      */
 
     public function trendinghome()//this is to return trending product in landing page
-    {
-        $items = products::latest()->paginate(12);
-        return view('/ecommerce', ['items' => $items]);  
+    {   
+        if (Session::has('unique_session_key')){
+            $items = products::latest()->paginate(12);
+            return view('/ecommerce', ['items' => $items]);  
+        }
+        else{
+            //Function to generaye random session
+            // session_start();
+            function generateRandomString($length = 20) {
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $charactersLength = strlen($characters);
+                $randomString = '';
+                for ($i = 0; $i < $length; $i++) {
+                    $randomString .= $characters[rand(0, $charactersLength - 1)];
+                }
+                return $randomString;
+            }
+            $uniquesessionvalue=generateRandomString();
+            //Putting the session unique value
+            Session::put('unique_session_key',$uniquesessionvalue);
+            //Returning the view
+            $items = products::latest()->paginate(12);
+            return view('/ecommerce', ['items' => $items]);
+        }
     }
 
 

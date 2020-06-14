@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\customers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Carts;
+use App\Products;
+use Session;
 
 class CustomersController extends Controller
 {
@@ -13,8 +17,13 @@ class CustomersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('/check-out');
+    {   
+        $key=Session::get('unique_session_key');
+        $items = DB::table('carts')
+            ->Join('products', 'products.product_id', '=', 'carts.product_id')
+            ->where('sessionkey', $key)
+            ->get();
+        return view('/check-out', ['items' => $items]);
     }
 
     /**

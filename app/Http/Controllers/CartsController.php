@@ -13,7 +13,7 @@ class CartsController extends Controller
 
 	public function cartdata()
     {   //   DB::select('select quantity from carts where sessionkey = ?', ['javris']);
-        $key=Session::get('this_will_be_unique_session_key_later_on');
+        $key=Session::get('unique_session_key');
         $items = DB::table('carts')
             ->Join('products', 'products.product_id', '=', 'carts.product_id')
             ->where('sessionkey', $key)
@@ -27,7 +27,7 @@ class CartsController extends Controller
     	$cart = new Carts;
 
     	$cart->product_id =$request->input('idofdata');
-    	$cart->sessionkey =Session::get('this_will_be_unique_session_key_later_on');
+    	$cart->sessionkey =Session::get('unique_session_key');
     	$cart->quantity = 1;
     	$cart->save();
     	echo "Added";

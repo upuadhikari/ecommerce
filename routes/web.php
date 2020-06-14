@@ -70,3 +70,4 @@ Route::post('/addtocarturl','CartsController@adddata');
 Route::post('/deletefromcarturl','CartsController@deletedata');
 Route::post('/updatecarturl','CartsController@updatedata');
 //Route for ajax request end
+Route::get('/checkoutpaypal','CheckOutController@paypalpayment');

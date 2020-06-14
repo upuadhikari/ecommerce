@@ -17,6 +17,7 @@ class CreatePaymentsTable extends Migration
             $table->bigIncrements('payment_id');
             $table->integer('paid_amount');
             $table->integer('order_id');
+            $table->string('payment_gateway');
             $table->rememberToken();
             $table->timestamps();
         });

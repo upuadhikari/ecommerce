@@ -22,6 +22,8 @@ class CreateOrdersTable extends Migration
             $table->dateTime('ordered_date', 0);
             $table->dateTime('delivery_date', 0)->nullable();
             $table->string('delivery_status');
+            $table->integer('total_amount');
+            $table->string('session_key');
             $table->timestamps();
         });
     }
