@@ -1,6 +1,6 @@
 <?php
-session_start();
-Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalue');
+// session_start();
+// Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalue');
 //Session::get('email');
 ?>
 <!DOCTYPE html>
@@ -28,12 +28,8 @@ Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalu
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="{{ asset('js/main.js') }}"></script> 
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <!-- Css Styles -->
-      <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}" type="text/css">
@@ -88,14 +84,14 @@ Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalu
                                 @endif
                             @else
                                 <li id="dropdown">
-                                    <a id="navbarDropdown" style="text-transform:capitalize;" class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
     
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-dark" href="/myproduct/{{ Auth::user()->id }}">
+                                      <a class="dropdown-item text-dark" href="/myproduct/{{Auth::user()->id}}">
                                             <i class="fas fa-cart-arrow-down"></i> My Products
-                                        </a><hr style="margin:5px">
+                                        </a>
                                         <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -247,7 +243,7 @@ Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalu
     <!-- Js Plugins -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript">
-	AOS.init();
+    AOS.init();
     </script>
       <!-- Bootstrap core JavaScript -->
   

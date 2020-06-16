@@ -13,10 +13,17 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+
+    public function list($id)
     {
         $citems = products::where('category_id',$id)->get();
-        return view('/categorized-search',['citems' => $citems]);
+        return view('categorized-search',['citems' => $citems]);
+    } 
+
+    public function index()
+    {
+        $citems = categories::all();
+        return view('Control Panel.features.categories.categories',['citems' => $citems]);
     }
 
     /**
@@ -26,7 +33,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('Control Panel.features.categories.add-category');
     }
 
     /**
@@ -37,7 +44,20 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       request()->validate([
+           'cname' => 'required',
+           'description' => 'required',
+       ]);  
+
+       $data = new categories;
+       $data->name = request('cname');
+       $data->description = request('description');
+
+
+       if($data->save())
+       {
+       return redirect()->back()->with('status','Category has been added successfully!');
+       }
     }
 
     /**
@@ -57,9 +77,10 @@ class CategoriesController extends Controller
      * @param  \App\categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function edit(categories $categories)
+    public function edit($id)
     {
-        //
+        $data = categories::find($id);
+        return view('Control Panel.features.categories.edit-category',['category' => $data]);
     }
 
     /**
@@ -69,9 +90,22 @@ class CategoriesController extends Controller
      * @param  \App\categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, categories $categories)
+    public function update($id)
     {
-        //
+         request()->validate([
+           'cname' => 'required',
+           'description' => 'required',
+       ]);  
+
+       $data = categories::find($id);
+       $data->name = request('cname');
+       $data->description = request('description');
+
+
+       if($data->save())
+       {
+       return redirect()->back()->with('status','Category has been updated successfully!');
+       }
     }
 
     /**
@@ -80,8 +114,9 @@ class CategoriesController extends Controller
      * @param  \App\categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function destroy(categories $categories)
+    public function destroy($id)
     {
-        //
+        categories::find($id)->delete();
+        return redirect()->back()->with('status','Category deleted successfully');
     }
 }

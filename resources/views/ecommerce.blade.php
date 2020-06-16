@@ -122,7 +122,11 @@
                                     <h4>{{$item->name}}</h4>
                                     <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
                                     
+                                      @guest
+                                    <a class="btn btn-primary" href="/login" id="addtocart">More details<</a>
+                                    @else
                                     <a href="/products/details/{{$item->product_id}}" class="btn btn-primary">More details</a>
+                                    @endguest
                                     
                                 </div>                      
                             </div>
@@ -148,7 +152,7 @@
                                     <h4>{{$item->name}}</h4>
                                     <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
                                      @guest
-                                    <a class="btn btn-primary" href="/login" id="addtocart">Add to Cart</a>
+                                    <a class="btn btn-primary" href="/login" id="addtocart">More details<</a>
                                     @else
                                     <a href="/products/details/{{$item->product_id}}" class="btn btn-primary">More details</a>
                                     @endguest
@@ -174,7 +178,7 @@
                                     <h4>{{$item->name}}</h4>
                                     <p class="item-price"><strike>Rs {{$item->price+$item->price*0.2}}</strike> <span>Rs {{$item->price}}</span></p>
                                      @guest
-                                    <a class="btn btn-primary" href="/login" id="addtocart">Add to Cart</a>
+                                    <a class="btn btn-primary" href="/login" id="addtocart">More details</a>
                                     @else
                                     <a href="/products/details/{{$item->product_id}}" class="btn btn-primary">More details</a>
                                     @endguest
@@ -250,32 +254,6 @@
         </div>
         <br>
         <br>
-
-        <!-- Ajax script for add to cart -->
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $(document).on('click','#addtocart',function(e){
-                  e.stopPropagation();
-                  e.stopImmediatePropagation();
-                  var id=$(this).closest('#findclosest').find('.idofdata').val();
-                  alert(id);
-                  $.ajax({
-                    url: "/addtocarturl",
-                    type: "POST",
-                    data:{
-                        "_token": "{{ csrf_token() }}",
-                        idofdata:id},
-                    success: function(){
-                      alert('Added to database cart!');
-                      //location.reload();
-                    }
-                  });
-                });
-            });
-        </script>
-        <!-- ajax script end -->
-    <!-- Latest Blog Section End -->
 
 
 

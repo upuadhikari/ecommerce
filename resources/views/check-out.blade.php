@@ -10,6 +10,7 @@
                 @csrf
                 <div class="row">
                     <div class="col-lg-6">
+                        {{session('flash')}}
                         <h4>Biiling Details</h4>
                         <div class="row">
                             <div class="col-lg-6">
@@ -49,11 +50,20 @@
                             <div class="order-total">
                                 <ul class="order-table">
                                     <li>Product <span>Total</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$120.00</span></li>
+                                    <?php
+                                    $total=0;
+                                    ?>
+                                    @foreach($items as $item)
+                                    <li class="fw-normal">{{$item->name}} x {{$item->quantity}} <span>{{$item->quantity*$item->price}}</span></li>
+                                    <?php
+                                    $total+=$item->price *$item->quantity;
+                                    ?>
+                                    @endforeach
+
+
+
                                     <li class="fw-normal">Subtotal <span>$240.00</span></li>
-                                    <li class="total-price" id="total" value="240">Total <span>$240.00</span></li>
+                                    <li class="total-price" id="total" value="{{$total/100}}">Total <span>Rs.{{$total}}</span></li>
                                 </ul>                           
                             </div>
                         </div>
@@ -69,9 +79,7 @@
 
 
     <script>
-
      const total = document.getElementById('total').value;
-
      paypal.Buttons({
     createOrder: function(data, actions) {
       // This function sets up the details of the transaction, including the amount and line item details.
@@ -84,7 +92,6 @@
         }]
       });
     },
-
     style: {
           shape: 'pill',
     },
@@ -93,6 +100,7 @@
       return actions.order.capture().then(function(details) {
         // This function shows a transaction success message to your buyer.
         alert('Transaction completed by ' + details.payer.name.given_name);
+        window.location.href = '/checkoutpaypal';
       });
     }
   }).render('#paypal-button-container');

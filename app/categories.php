@@ -9,6 +9,8 @@ use App\products;
 class categories extends Model
 {
 
+    public $table = "categories";
+
     public function products()
     {
           return $this->hasMany(products::class);

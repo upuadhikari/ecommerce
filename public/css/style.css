@@ -365,11 +365,8 @@ h2 {
     border-bottom: 1px solid #e0e0e0;
 }
 
-.inner-header .logo {
+#e {
     font-size: 30px;
-}
-
-.inner-header .logo #e {
     color: #e7ab3c;
 }
 
@@ -2660,6 +2657,117 @@ input[type="file"] {
 #paypal-button-container {
     margin-top: 10px;
 }
+
+/* -----Panel -----*/
+
+#control-panel .content #dropdown a {
+    padding-top: 15px;
+}
+
+.dashboard {
+    margin-top: 40px;
+    margin-left: 14px;
+}
+
+.dashboard h6 {
+    color: #9b9b9b;
+}
+
+#panel-menu1 {
+    margin-top: 40px;
+}
+
+.row #col {
+    text-align: center;
+}
+
+.row #col h5 {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    background-color: #e7ab3c;
+    color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.row #col h6 {
+    font-size: 14px;
+    background-color: #fff;
+    color: #e7ab3c;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+#panel-menu1 #col hr {
+    margin: 5px;
+}
+
+#panel-menu2 {
+    margin-top: 10px;
+}
+
+#col .box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6 {
+    width: 90%;
+    min-height: 180px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 5px 1px 15px 1px #dfe6e9;
+    cursor: pointer;
+    border: 1px solid #e7ab3c;
+    transition: 0.3s;
+}
+
+#col div:hover {
+    transform: scale(1.1);
+}
+
+.content #container .table {
+    margin-top: 50px;
+}
+
+.content #container #add-btn {
+    float: right;
+    margin: 20px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #e7ab3c;
+    color: #fff;
+    font-size: 14px;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.content #container #add-btn .content {
+    display: flex;
+    padding-left: 7px;
+    padding-top: 3px;
+}
+
+.content #container #add-btn .content div {
+    padding: 2px;
+}
+
+.content #container #add-btn .col2 {
+    display: none;
+}
+
+.content #container #add-btn:hover {
+    width: 60px;
+}
+
+.content #container #add-btn:hover .col2 {
+    display: block;
+}
+
 /* ------------------------------ Responsive Media Styles ---------------------------- */
 
 @media only screen and (min-width: 1200px) and (max-width: 1920px) {

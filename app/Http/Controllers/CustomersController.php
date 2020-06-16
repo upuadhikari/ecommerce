@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\customers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Session;
 
 class CustomersController extends Controller
 {
@@ -12,9 +14,19 @@ class CustomersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function cpanel_index()
     {
-        return view('/check-out');
+        return view('Control Panel.features.customers.customers');
+    }
+
+      public function index()
+    {   
+        $key=Session::get('unique_session_key');
+        $items = DB::table('carts')
+            ->Join('products', 'products.product_id', '=', 'carts.product_id')
+            ->where('sessionkey', $key)
+            ->get();
+        return view('/check-out', ['items' => $items]);
     }
 
     /**
@@ -35,12 +47,7 @@ class CustomersController extends Controller
      */
     public function store(Request $request)
     {
-        $method = request('payment');
         
-        if($method == "paypal")
-        {
-            echo("working");
-        }
     }
 
     /**

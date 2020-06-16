@@ -1,0 +1,158 @@
+
+  @import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
+ 
+  *
+  {
+    padding: 0px;
+    margin: 0px;
+  }
+ body 
+  {
+    overflow-x: hidden;
+    background-image: url(img/10.jpg);
+    background-size: cover;
+    font-family: 'Titillium Web', sans-serif;
+  }
+ .sidebar a 
+  {
+    color: white;
+    display: block;
+    padding-left: 10px;
+  }
+.sidebar .close 
+ {
+   position: absolute;
+   top: 0;
+   right: 10px;
+   margin-left: 50px;
+   font-size: 20px;
+   color: #5b2537; 
+   transition: 0.s;
+ }
+ #top .slide a 
+ {
+   position: absolute;
+   top: 15%;
+   left: 2%;
+   color: #fff;
+   font-size: 36px;
+ }
+#content
+ {
+   padding: 20px;
+   transition: margin-left 0.1s;
+   overflow: hidden;
+   width: 100%;
+ }
+ul
+ {
+   list-style: none;
+   text-decoration: none;
+ }
+.wrapper
+ {
+   display: flex;
+   position: relative;
+ }
+.sidebar
+ {
+   background-color: #5b2537;
+   width: 0;
+   height: 100%;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   overflow-x: hidden;
+   padding-top: 80px;
+   transition: 0.1s;
+ }
+h2
+ {
+   color: #5b2537;
+   padding-top: 5px;
+   text-align: center;
+   font-family: 'Alata', sans-serif;
+ }
+.sidebar ul li
+ {
+    list-style: none;
+    padding: 15px;
+ }
+.sidebar ul li a
+ {
+   text-decoration: none;
+   color: white;
+   display: block;
+   padding-left: 10px;
+ }
+.sidebar ul li a .fas
+ {
+   width: 25px;
+ }
+#content .sidebar ul li a:hover
+ {
+   color: #c37d6c;
+   text-decoration:none;
+ }
+#k
+ {
+   padding-top: 0;
+   font-size: 50px;
+   color: #5b2537;
+ }
+#k3
+  {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    background-color: white;
+    border-radius: 0px 0px 10px 30px;
+  }
+#lg
+  {
+    position: absolute;
+    bottom: 2px;
+  }
+.sidebar ul li ul li
+  {
+    display: none;
+  }
+.sidebar ul li:hover ul li
+  {
+    display: block;
+    padding-left: 20px;
+  }
+ #top
+  {
+    width: 100%;
+    height: 78px;
+    background-color: #5b2537;
+    position: absolute;
+    margin: 0px;
+    top: 0%;
+    left: 0%;
+  }
+#top p
+  {
+    color: white;
+    text-align: center;
+    font-family: 'Alata', sans-serif;
+    position: absolute;
+    left: 40%;
+    font-size: 25px;
+    word-spacing: 5px;
+    font-family: 'Alata', sans-serif;
+    letter-spacing: 1px;
+  }  
+ .recommended
+    {
+      position: absolute;
+      top: 18%;
+      left: 12%;
+      width: 1000px;
+      height: 450px;
+      border-radius: 15px;
+      background-color: white; 
+    }
