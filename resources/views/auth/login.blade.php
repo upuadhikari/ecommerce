@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="card">
-                <div class="card-header">Welcome to <span class="e">E</span>-tech!</div>
+                <div class="card-header">Welcome to <span class="e">Tech</span>shop!</div>
 
                 <div class="card-body">
                     <div class="wrapper1">
@@ -50,9 +50,9 @@
                                     <button type="submit" class="btn" id="btn">
                                         {{ __('Login') }}
                                     </button>
-    
-                                    
-                                       <span id="register">Doesn't have a account yet? <a href="/register">Sign up<a></span>
+                                    <br>
+                                    <br>
+                                    <span id="register"><a href="/register">OR CREATE AN ACCOUNT<a></span>
                                 </div>
                             </div>
                         </form>
@@ -62,4 +62,8 @@
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
 @endsection

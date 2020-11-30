@@ -1,3 +1,8 @@
+<?php
+session_start();
+Session::put('this_will_be_unique_session_key_later_on','thisisrandomsessionvalue');
+//Session::get('email');
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -17,9 +22,13 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script> 
-    <script src="js/jquery-ui.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="js/jquery-3.3.1.min.js"></script>  -->
+    <!-- <script src="js/jquery-ui.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script> 
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
@@ -31,6 +40,8 @@
     <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css">
+
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -64,16 +75,16 @@
                            <div class="content">
                                @guest
                                         
-                                           <a href="{{ route('login') }}"><i class="fas fa-user"></i> <b>Login</b></a>
+                                           <a href="{{ route('login') }}" id="login"><i class="fas fa-user"></i> <b>Login</b></a>
                                       
                                 @if (Route::has('register'))
                                    
-                                            <a href="{{ route('register') }}"><span><i class="fas fa-sign-in-alt"></i> <b>Register</b></span></a>
+                                            <a href="{{ route('register') }}" id="signup"><span><i class="fas fa-sign-in-alt"></i> <b>Register</b></span></a>
                                         
                                 @endif
                             @else
-                                <li class="dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <li id="dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
     
@@ -111,18 +122,32 @@
                         <div class="advanced-search">
                             <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
+                                @guest
+                                 <a href="/login"><button type="button"><i class="ti-search"></i></button></a>
+                                 @else
+                                 <a href="/search"><button type="button"><i class="ti-search"></i></button></a>
+                                 @endguest
                             </div>
 
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3" id="col3">  
                              <div class="cart">
-                                 <img src="{{ asset('img/cart.png') }}" id="cart"/>
+                                @guest
+                                <!-- this should be a href="/login"-->
+                                <a href="/cart"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
+                                @else
+                                <a href="/cart"><img src="{{ asset('img/cart.png') }}" id="cart"/></a>
+                                @endguest
                              </div>                                             
                             <ul class="shopnow">
                         <!-- Authentication Links -->
-                                <li><a><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
+                                @guest
+                                <!-- this should be a href="/login"-->
+                                <li><a href="/shop"><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
+                                @else
+                                <li><a href="/shop"><button id="btn"><i class="fas fa-shopping-cart"></i> <span>SHOP NOW</span></button></a></li>
+                                 @endguest
                            </ul>
                     </div>
                 </div>
@@ -135,26 +160,96 @@
             @yield('content')
     </main>
 
-        <!---Contents--->   
-
-    <!---end of contents-->
+    
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: Panga-08, kirtipur</li>
+                            <li>Phone: +977-9860462244</li>
+                            <li>Email: tech.shop@gmail.com</li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5>Information</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <h5>My Account</h5>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Shopping Cart</a></li>
+                            <li><a href="#">Shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="newslatter-item">
+                        <h5>Join Our Newsletter Now</h5>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#" class="subscribe-form">
+                            <input type="text" placeholder="Enter Your Mail">
+                            <button type="button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-reserved">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-text">
+                          <span>Copyright &copy;2021 All rights reserved |  TechShop</span>
+                        </div>
+                        <div class="payment-pic">
+                            <img src="img/payment-method.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-      <script>
-      AOS.inti();
-      </script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript">
+    AOS.init();
+    </script>
       <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> 
+  
+    <!-- <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>  -->
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
     <script src="{{ asset('js/jquery.dd.min.js') }}"></script>
     <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script> 
+    
 </body>
 
 </html>

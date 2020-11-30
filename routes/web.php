@@ -13,27 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('ecommerce');
-});
+Route::get('/','ProductsController@trendinghome');
 
-Route::get('/slider', function () {
-    return view('slider');
+Route::get('/products/details/{id}', 'ProductsController@show');
+
+Route::get('/shop', 'ProductsController@index');
+
+Route::get('/cart','CartController@cartdata');
+
+Route::get('/checkout', function () {
+    return view('check-out');
 });
-<<<<<<< HEAD
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+// Routes for ajax request
+Route::post('/addtocarturl','CartController@adddata');
+Route::post('/deletefromcarturl','CartController@deletedata');
+Route::post('/updatecarturl','CartController@updatedata');
 
 
-
-
-
-
-=======
->>>>>>> aman
-
-Auth::routes();
-
+//Route for ajax request end
 Route::get('/home', 'HomeController@index')->name('home');
