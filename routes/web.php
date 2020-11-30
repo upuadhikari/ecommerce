@@ -27,17 +27,6 @@ Route::get('/checkout', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-
-
-
-
-
-
-
 
 // Routes for ajax request
 Route::post('/addtocarturl','CartController@adddata');
@@ -46,3 +35,4 @@ Route::post('/updatecarturl','CartController@updatedata');
 
 
 //Route for ajax request end
+Route::get('/home', 'HomeController@index')->name('home');
